@@ -367,14 +367,15 @@ body::before {
 /* ===== REALISTIC ROMANTIC HEART ===== */
 
 .heart-background {
-    position: fixed;
+    position: absolute;
+
     left: 50%;
-    top: 52%;
+    top: 75px;
 
-    width: min(75vw, 560px);
-    height: min(85vh, 680px);
+    width: 430px;
+    height: 390px;
 
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
     z-index: 0;
     pointer-events: none;
@@ -383,7 +384,7 @@ body::before {
     align-items: center;
     justify-content: center;
 
-    opacity: 0.15;
+    opacity: 0.20;
 }
 
 .heart-background img {
@@ -395,13 +396,12 @@ body::before {
     transform-origin: 50% 52%;
 
     filter:
-        saturate(1.1)
-        contrast(1.05)
-        drop-shadow(0 0 18px rgba(190, 45, 95, 0.35));
+        saturate(1.08)
+        contrast(1.04)
+        drop-shadow(0 0 18px rgba(183, 48, 91, 0.30));
 
     animation: realisticHeartBeat 1s infinite;
 }
-
 
 /* Soft glow behind the heart */
 
@@ -508,15 +508,22 @@ main,
 
 /* Mobile */
 
-@media (max-width: 650px) {
+@media(max-width:650px) {
 
     .heart-background {
-        width: 94vw;
-        height: 78vh;
+        position: absolute;
 
-        top: 52%;
+        left: 50%;
+        top: 65px;
 
-        opacity: 0.12;
+        width: 340px;
+        height: 350px;
+
+        transform: translateX(-50%);
+
+        opacity: 0.16;
+
+        z-index: 0;
     }
 
 }
