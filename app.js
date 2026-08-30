@@ -44,3 +44,20 @@ function updateCountdown() {
 if (updateCountdown()) {
   setInterval(updateCountdown, 1000);
 }
+
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.loop = true;
+bgMusic.volume = 0.45;
+
+function startMusic() {
+    bgMusic.play().catch(() => {});
+}
+
+document.addEventListener("touchstart", startMusic, {
+    once: true
+});
+
+document.addEventListener("click", startMusic, {
+    once: true
+});
