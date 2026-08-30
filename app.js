@@ -45,45 +45,29 @@ if (updateCountdown()) {
   setInterval(updateCountdown, 1000);
 }
 
-const bgMusic = document.getElementById("bgMusic");
+/* =========================================
+   OPENING PAGE + MUSIC
+   ========================================= */
+
+const openingScreen =
+    document.getElementById("openingScreen");
+
+const startButton =
+    document.getElementById("startButton");
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
 
 bgMusic.loop = true;
-bgMusic.volume = 0.45;
 
-function startMusic() {
-    bgMusic.play().catch(() => {});
-}
-
-document.addEventListener("touchstart", startMusic, {
-    once: true
-});
-
-document.addEventListener("click", startMusic, {
-    once: true
-});
-
-/* =================================
-   START SCREEN + MUSIC
-   ================================= */
-
-const openingScreen = document.getElementById("openingScreen");
-const startButton = document.getElementById("startButton");
-const bgMusic = document.getElementById("bgMusic");
-
-bgMusic.loop = true;
 bgMusic.volume = 0.45;
 
 
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", function () {
 
-    // Start music immediately
-    bgMusic.play()
-        .then(() => {
-            console.log("Music started");
-        })
-        .catch((error) => {
-            console.log("Music error:", error);
-        });
+    // Start music
+    bgMusic.play();
 
 
     // Hide opening screen
