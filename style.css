@@ -626,12 +626,12 @@ main,
         left: 50%;
         top: 65px;
 
-        width: 340px;
-        height: 350px;
+        width: 380px;
+        height: 390px;
 
         transform: translateX(-50%);
 
-        opacity: 0.16;
+        opacity: 0.12;
 
         z-index: 0;
     }
