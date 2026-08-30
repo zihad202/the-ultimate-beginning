@@ -61,3 +61,32 @@ document.addEventListener("touchstart", startMusic, {
 document.addEventListener("click", startMusic, {
     once: true
 });
+
+/* =================================
+   START SCREEN + MUSIC
+   ================================= */
+
+const openingScreen = document.getElementById("openingScreen");
+const startButton = document.getElementById("startButton");
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.loop = true;
+bgMusic.volume = 0.45;
+
+
+startButton.addEventListener("click", () => {
+
+    // Start music immediately
+    bgMusic.play()
+        .then(() => {
+            console.log("Music started");
+        })
+        .catch((error) => {
+            console.log("Music error:", error);
+        });
+
+
+    // Hide opening screen
+    openingScreen.classList.add("hide");
+
+});
